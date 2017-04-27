@@ -1,0 +1,28 @@
+﻿@{ 
+    ViewData["Title"] = "Gallery";
+}
+<h1>
+    Gallery
+</h1>
+
+<div class="row" id="gallery">
+    <div class="col-xs-12">
+        <ul class="gallery-list">
+            @for (var i = 0; i < 20; i++)
+            {
+                <li>
+                    <img src="http://placehold.it/400/2f89b3/ffffff?text=Item+@(i+1)" />
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+@section Scripts {
+    <environment names="Development">
+        <script src="~/js/gallery.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/gallery.min.js"></script>
+    </environment>
+}

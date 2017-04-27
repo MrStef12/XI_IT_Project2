@@ -1,50 +1,55 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.account-body {
+    background: #2f89b3;
 }
 
-/* Set widths on the form inputs since otherwise they're 100% wide */
-input,
-select,
-textarea {
-    max-width: 280px;
+.account-box {
+    background: #fff;
+    border: 1px #909090 solid;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 10% auto;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+.back-button-container {
+    margin: 20px 0px 0px 20px;
 }
 
-/* buttons and links extension to use brackets: [ click me ] */
-.btn-bracketed::before {
-    display: inline-block;
-    content: "[";
-    padding-right: 0.5em;
+.gallery-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.btn-bracketed::after {
-    display: inline-block;
-    content: "]";
-    padding-left: 0.5em;
+.gallery-list > li {
+    float: left;
+    width: 20%;
+    height: 20%;
+    margin: 0 -1px -1px 0;
+    border: 10px solid transparent;
+    overflow: hidden;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
+.gallery-list > li > img {
     width: 100%;
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
+    vertical-align: middle;
+    border-style: none;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
+@media (max-width: 768px) {
+    .account-box {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .gallery-list > li {
+        width: 50%;
+        height: 50%;
     }
 }
