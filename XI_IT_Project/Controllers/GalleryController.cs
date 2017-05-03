@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
 using XI_IT_Project_assignment_2.Data;
 using Microsoft.EntityFrameworkCore;
-using XI_IT_Project_assignment_2.Data.Models;
+using Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
