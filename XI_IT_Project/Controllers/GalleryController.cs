@@ -55,9 +55,9 @@ namespace XI_IT_Project.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(int Id)
         {
-            Image i = await _context.Images.AsNoTracking().SingleOrDefaultAsync(m => m.Id == id);
+            Image i = await _context.Images.AsNoTracking().SingleOrDefaultAsync(m => m.Id == Id);
 
             if (i == null)
             {
@@ -71,7 +71,7 @@ namespace XI_IT_Project.Controllers
                 return Redirect("Index");
             } catch (DbUpdateException)
             {
-                return RedirectToAction("Delete", new { id = id, saveChangesError = true });
+                return RedirectToAction("Delete", new { Id = Id, saveChangesError = true });
             }
         }
     }
