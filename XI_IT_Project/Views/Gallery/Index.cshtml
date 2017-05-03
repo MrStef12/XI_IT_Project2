@@ -1,4 +1,5 @@
-﻿@{ 
+﻿@model IEnumerable<Models.Image>
+@{ 
     ViewData["Title"] = "Gallery";
 }
 <h1>
@@ -13,10 +14,16 @@
 <div class="row" id="gallery">
     <div class="col-xs-12">
         <ul class="gallery-list">
-            @for (var i = 0; i < 20; i++)
+            @if(Model.Count() == 0)
+            {
+                <div class="alert alert-info">
+                    There are no gallery items in the database. Add some by pressing the "Add" button in the top right corner.
+                </div>
+            }
+            @foreach(var item in Model)
             {
                 <li>
-                    <img src="http://placehold.it/400/2f89b3/ffffff?text=Item+@(i+1)" />
+                    <img src="@item.ImgUrl" alt="@item.Title - Added by @item.Name"/>
                 </li>
             }
         </ul>

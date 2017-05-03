@@ -1,5 +1,5 @@
 ﻿var galleryOptions = {
-    title: false,
+    title: true,
     toolbar: false,
     moveable: false,
     rotatable: false,

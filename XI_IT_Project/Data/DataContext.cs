@@ -10,6 +10,7 @@ namespace XI_IT_Project_assignment_2.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
+            this.Database.EnsureCreated();
         }
 
         public DbSet<Models.Image> Images { get; set; }

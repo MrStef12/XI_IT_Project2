@@ -8,7 +8,8 @@
 </h1>
 
 <div class="row" id="gallery">
-    <form asp-controller="Gallery" asp-action="PostNewImage" method="post">
+    <form asp-controller="Gallery" asp-action="New" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
         <div class="col-md-6 col-xs-12">
             <div class="form-group">
                 <label for="nameField">Your name:</label>

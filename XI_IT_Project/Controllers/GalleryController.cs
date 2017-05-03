@@ -30,7 +30,7 @@ namespace XI_IT_Project.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Title", "Name", "Email", "ImgUrl")] Image image)
+        public async Task<IActionResult> New([Bind("Title", "Name", "Email", "ImgUrl")] Image image)
         {
             try
             {
@@ -38,16 +38,16 @@ namespace XI_IT_Project.Controllers
                 {
                     _context.Add(image);
                     await _context.SaveChangesAsync();
-                    return Redirect("New");
+                    return Redirect("Index");
                 }
             } catch(DbUpdateException)
             {
-                ModelState.AddModelError("", "Unable to saves changes to DB!");
+                ModelState.AddModelError("create", "Unable to saves changes to DB!");
             }
-
             return View(image);
         }
 
+        [HttpGet]
         public IActionResult New()
         {
             return View();
