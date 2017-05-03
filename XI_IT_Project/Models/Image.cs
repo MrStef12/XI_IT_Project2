@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace XI_IT_Project_assignment_2.Data.Models
+namespace Models
 {
     public class Image
     {
