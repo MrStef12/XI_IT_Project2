@@ -53,27 +53,26 @@ namespace XI_IT_Project.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public async Task<IActionResult> Delete(int Id)
         {
             Image i = await _context.Images.AsNoTracking().SingleOrDefaultAsync(m => m.Id == Id);
 
             if (i == null)
             {
-                return Redirect("Overview");
+                return Redirect("~/Gallery/Overview");
             }
 
             try
             {
                 _context.Images.Remove(i);
                 await _context.SaveChangesAsync();
-                return Redirect("Overview");
+                return Redirect("~/Gallery/Overview");
             } catch (DbUpdateException)
             {
                 ModelState.AddModelError("delete", "Unable to delete item");
             }
-            return View("Overview");
+            return Redirect("~/Gallery/Overview");
         }
 
         [HttpGet]
