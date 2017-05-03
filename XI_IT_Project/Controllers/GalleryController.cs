@@ -71,8 +71,9 @@ namespace XI_IT_Project.Controllers
                 return Redirect("Index");
             } catch (DbUpdateException)
             {
-                return RedirectToAction("Delete", new { Id = Id, saveChangesError = true });
+                ModelState.AddModelError("delete", "Unable to delete item");
             }
+            return View("Overview");
         }
     }
 }
