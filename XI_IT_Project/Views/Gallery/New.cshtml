@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Add new";
+}
+<h1>
+    Add new gallery item
+</h1>
+
+<div class="row" id="gallery">
+    <div class="col-md-6 col-xs-12">
+        <div class="form-group">
+            <label for="nameField">Your name:</label>
+            <input type="text" class="form-control" id="nameField" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+            <label for="emailField">Your e-mail:</label>
+            <input type="email" class="form-control" id="emailField" placeholder="john@example.com" required>
+        </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+        <div class="form-group">
+            <label for="titleField">Image title:</label>
+            <input type="text" class="form-control" id="titleField" placeholder="A wonderful image" required>
+        </div>
+        <div class="form-group">
+            <label for="urlField">Image URL:</label>
+            <input type="url" class="form-control" id="urlField" placeholder="https://example.com/image.jpg" required>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="pull-right">
+            <button type="submit" class="btn btn-primary">Submit image</button>
+        </div>
+    </div>
+</div>

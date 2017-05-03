@@ -16,5 +16,10 @@ namespace XI_IT_Project.Controllers
         {
             return View();
         }
+
+        public IActionResult New()
+        {
+            return View();
+        }
     }
 }
