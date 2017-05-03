@@ -32,9 +32,20 @@ namespace XI_IT_Project.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Title", "Name", "Email", "ImgUrl")] Image image)
         {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _context.Add(image);
+                    await _context.SaveChangesAsync();
+                    return Redirect("New");
+                }
+            } catch(DbUpdateException)
+            {
+                ModelState.AddModelError("", "Unable to saves changes to DB!");
+            }
 
-
-            return View();
+            return View(image);
         }
 
         public IActionResult New()
