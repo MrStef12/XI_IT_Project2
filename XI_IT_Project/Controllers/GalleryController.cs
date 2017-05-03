@@ -61,18 +61,24 @@ namespace XI_IT_Project.Controllers
 
             if (i == null)
             {
-                return Redirect("Index");
+                return Redirect("Overview");
             }
 
             try
             {
                 _context.Images.Remove(i);
                 await _context.SaveChangesAsync();
-                return Redirect("Index");
+                return Redirect("Overview");
             } catch (DbUpdateException)
             {
                 return RedirectToAction("Delete", new { Id = Id, saveChangesError = true });
             }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Overview()
+        {
+            return View(await _context.Images.ToListAsync());
         }
     }
 }
