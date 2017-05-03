@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
 using XI_IT_Project_assignment_2.Data;
 using Microsoft.EntityFrameworkCore;
+using XI_IT_Project_assignment_2.Data.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,6 +25,13 @@ namespace XI_IT_Project.Controllers
         public async Task<IActionResult> Index()
         {
             return View(await _context.Images.ToListAsync());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Title", "Name", "Email", "ImgUrl")] Image image)
+        {
+
         }
     }
 }
