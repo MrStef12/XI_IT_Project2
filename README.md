@@ -10,6 +10,12 @@ Simply open Visual Studio 2017 and open the solution of the project.
 * Frontpage
     * **Controller**: GalleryController -> Index()
     * **View**: Gallery/Index.cshtml
+* Add new gallery item
+    * **Controller**: GalleryController -> New()
+    * **View**: Gallery/New.cshtml
+* Gallery overview
+    * **Controller**: GalleryController -> Overview()
+    * **View**: Gallery/Overview.cshtml
 * About
     * **Controller**: AboutController -> Index()
     * **View**: About/Index.cshtml
@@ -22,10 +28,13 @@ Simply open Visual Studio 2017 and open the solution of the project.
 
 It was decided that the homepage defaults to the gallery controller index, so that the gallery is the front page.
 
+## Entity Framwork
+This project uses the Entity Framework for database migraion and communication. It uses a local database.
+
+The *Image* model, found under Models/Image.cs represents a Image in the gallery and holds validations rules for when creating a new Imange in the *Add new gallery item* page.
+
 ## Layouts
 The project has a global shared layout file. It defines the header, navbar, footer and scripts-section.
-
-Alongside this, the Account views has their own Layout file that overrides the global one, in order to structure and style those pages differently than the rest.
 
 ## Libraries
 This project uses a couple of clientside libraries to enhance the user experience. They are as follows along with their usages:
