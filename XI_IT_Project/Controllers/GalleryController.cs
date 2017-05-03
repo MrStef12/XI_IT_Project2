@@ -52,5 +52,27 @@ namespace XI_IT_Project.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            Image i = await _context.Images.AsNoTracking().SingleOrDefaultAsync(m => m.Id == id);
+
+            if (i == null)
+            {
+                return Redirect("Index");
+            }
+
+            try
+            {
+                _context.Images.Remove(i);
+                await _context.SaveChangesAsync();
+                return Redirect("Index");
+            } catch (DbUpdateException)
+            {
+                return RedirectToAction("Delete", new { id = id, saveChangesError = true });
+            }
+        }
     }
 }
