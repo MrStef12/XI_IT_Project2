@@ -1,0 +1,15 @@
+{
+  "name": "img-viewerjs",
+  "homepage": "https://github.com/fengyuanchen/viewerjs",
+  "version": "0.6.2",
+  "_release": "0.6.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.6.2",
+    "commit": "59b926ff335529e1cc7ee2df22c19e8d4bfd50d3"
+  },
+  "_source": "https://github.com/fengyuanchen/viewerjs.git",
+  "_target": "v0.6.2",
+  "_originalSource": "img-viewerjs",
+  "_direct": true
+}
