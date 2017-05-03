@@ -27,11 +27,19 @@ namespace XI_IT_Project.Controllers
             return View(await _context.Images.ToListAsync());
         }
 
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Title", "Name", "Email", "ImgUrl")] Image image)
         {
 
+
+            return View();
+        }
+
+        public IActionResult New()
+        {
+            return View();
         }
     }
 }
