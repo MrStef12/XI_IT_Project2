@@ -33,6 +33,14 @@
                 </tr>
             </thead>
             <tbody>
+                @if(Model.Count() == 0)
+                {
+                    <tr>
+                        <td colspan="6" class="info" style="text-align:center">
+                            There are no gallery items in the database.
+                        </td>
+                    </tr>
+                }
                 @foreach(var item in Model)
                 {
                     <tr>

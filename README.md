@@ -1,5 +1,5 @@
-# Assignment 1 - Internet Technology
-### Steffen Hansen (stefh14)
+# Assignment 2 - Internet Technology
+### Ditlev Stjerne (distj14) & Steffen Hansen (stefh14)
 
 This project is built using ASP.NET Core MVC, and a couple of client side libraries to enhance the user experience.
 
